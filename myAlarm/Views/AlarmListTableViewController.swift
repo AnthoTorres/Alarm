@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
+class AlarmListTableViewController: UITableViewController {
     
     
     let alarmController = AlarmController.sharedInstance
@@ -54,3 +54,12 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
     }
 }
 
+extension AlarmListTableViewController: SwitchTableViewCellDelegate {
+    
+    func alarmSwitchTapped(for cell: SwitchTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let alarm = AlarmController.sharedInstance.myAlarm[indexPath.row]
+        AlarmController.sharedInstance.toggleEnabled(for: alarm)
+        cell.updateView(with: alarm)
+    }
+}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Alarm {
+class Alarm: Codable {
     
     var fireDate: Date
     var name: String
@@ -18,6 +18,7 @@ class Alarm {
     var fireTimeAsString: String {
         //This Will Give us the Data but as a String from fireDate
         let formatter = DateFormatter()
+        formatter.timeStyle = .short
         return formatter.string(from: fireDate)
     }
     

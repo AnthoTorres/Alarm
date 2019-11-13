@@ -43,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E298A8E237B4E60001A3AEE /* CustomViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E66D2CF237A12A100CF52E2 /* SwitchTableViewCell.swift */,
+			);
+			path = CustomViewCell;
+			sourceTree = "<group>";
+		};
 		F7C2037F2131AD3400C3FC77 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				8E66D2CB237A11E200CF52E2 /* Alarm.swift */,
+				8E66D2D0237A12F800CF52E2 /* AlarmController.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -81,7 +90,6 @@
 		F7C203A82131B1DB00C3FC77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E66D2D0237A12F800CF52E2 /* AlarmController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -91,7 +99,7 @@
 			children = (
 				8E66D2CD237A12A100CF52E2 /* AlarmDetailTableViewController.swift */,
 				8EDC8EDC237A757D00C4718F /* AlarmListTableViewController.swift */,
-				8E66D2CF237A12A100CF52E2 /* SwitchTableViewCell.swift */,
+				8E298A8E237B4E60001A3AEE /* CustomViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";

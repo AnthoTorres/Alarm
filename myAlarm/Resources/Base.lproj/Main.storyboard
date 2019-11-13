@@ -23,35 +23,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="e77-Ac-DOh">
-                                            <rect key="frame" x="33" y="46" width="326" height="31"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvI-6C-grJ">
+                                            <rect key="frame" x="310" y="41" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchValueChanged:" destination="59G-hN-2WA" eventType="valueChanged" id="RKd-BO-vOu"/>
+                                            </connections>
+                                        </switch>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bIz-wR-eyl">
+                                            <rect key="frame" x="16" y="33" width="45" height="47"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-Yj-cQo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="38" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjU-9b-fGY">
-                                                    <rect key="frame" x="135" y="0.0" width="45" height="31"/>
+                                                    <rect key="frame" x="0.0" y="26.5" width="45" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvI-6C-grJ">
-                                                    <rect key="frame" x="277" y="0.0" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="alarmSwitchToggled:" destination="59G-hN-2WA" eventType="valueChanged" id="1dK-Cj-2mG"/>
-                                                    </connections>
-                                                </switch>
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YvI-6C-grJ" firstAttribute="trailing" secondItem="7ik-6u-yVS" secondAttribute="trailingMargin" id="E4s-12-Rqw"/>
+                                        <constraint firstItem="bIz-wR-eyl" firstAttribute="centerY" secondItem="7ik-6u-yVS" secondAttribute="centerY" id="Iik-1e-tTs"/>
+                                        <constraint firstItem="bIz-wR-eyl" firstAttribute="leading" secondItem="7ik-6u-yVS" secondAttribute="leadingMargin" id="R27-pO-33W"/>
+                                        <constraint firstItem="bIz-wR-eyl" firstAttribute="centerY" secondItem="YvI-6C-grJ" secondAttribute="centerY" id="erb-EB-R0G"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="e77-Ac-DOh" firstAttribute="centerY" secondItem="59G-hN-2WA" secondAttribute="centerY" id="IVo-2j-Udd"/>
-                                    <constraint firstItem="e77-Ac-DOh" firstAttribute="centerX" secondItem="59G-hN-2WA" secondAttribute="centerX" id="bWU-zs-ug0"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="nameLabel" destination="AjU-9b-fGY" id="Pfr-qq-cZn"/>
                                     <outlet property="timeLabel" destination="ekz-Yj-cQo" id="kEZ-h1-8UC"/>
@@ -95,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fPe-Rz-MtF">
-                                                    <rect key="frame" x="27" y="-10" width="320" height="216"/>
+                                                    <rect key="frame" x="27.5" y="-10" width="320" height="216"/>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -199,6 +201,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YAC-EW-mOJ"/>
+        <segue reference="bRn-6x-Dll"/>
     </inferredMetricsTieBreakers>
 </document>

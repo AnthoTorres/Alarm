@@ -16,18 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        //AlarmController.shared.alarms = AlarmController.shared.loadFromPersisentStore()
-
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (accepted, error) in
-            if !accepted{
-                print("Notification access has been denied")
-            }
-        }
         
         UNUserNotificationCenter.current().delegate = self
         
+        // Request Notification Permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {
+            _, error in if let error = error {
+                print(error, error.localizedDescription)
+            }
+        }
         return true
     }
 

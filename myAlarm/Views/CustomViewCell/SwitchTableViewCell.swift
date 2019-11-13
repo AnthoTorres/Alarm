@@ -18,7 +18,8 @@ class SwitchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-
+    
+    
     var alarm: Alarm? {
         didSet {
             setUpCell()
@@ -26,13 +27,13 @@ class SwitchTableViewCell: UITableViewCell {
     }
     
     func setUpCell() {
-        textLabel?.text = alarm?.fireTimeAsString
+        timeLabel?.text = alarm?.fireTimeAsString
         nameLabel?.text = alarm?.name
     }
     
     
     
-    @IBAction func alarmSwitchToggled(_ sender: Any) {
+    @IBAction func switchValueChanged(_ sender: Any) {
         if let delegate = delegate {
             delegate.switchCellSwitchValueChanged(cell: self)
         }
@@ -43,6 +44,13 @@ class SwitchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func updateView(with alarm: Alarm) {
+        
+        nameLabel.text = alarm.name
+        timeLabel.text = alarm.fireTimeAsString
+        
+        self.backgroundColor = alarm.enabled ? .cyan : .white
     }
 
 }
